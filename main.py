@@ -15,15 +15,58 @@ st.set_page_config(page_title="Eddy_Sync", layout="wide", initial_sidebar_state=
 # --- 1. CONFIGURACIÓN DE RUTINAS Y EJERCICIOS ---
 RUTINAS = {
     "Tren Inferior": {
-        "Cuádriceps (Prensa)": {"imagen": "https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=400", "nota": "Enfoque en pierna afectada por hemiparesia."},
-        "Isquiotibiales (Curl)": {"imagen": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=400", "nota": "Controlar extensión máxima."}
+        "Cuádriceps (Prensa)": {
+            "imagen": "https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=400", 
+            "nota": "Enfoque en pierna afectada por hemiparesia."
+        },
+        "Isquiotibiales (Curl)": {
+            "imagen": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=400", 
+            "nota": "Controlar extensión máxima."
+        },
+        "Extensión de Cadera (Polea Baja)": {
+            "imagen": "https://images.unsplash.com/photo-1605296867304-46d5465a25f1?q=80&w=400",
+            "nota": "Activación del glúteo mayor y control de la extensión de cadera afectada."
+        },
+        "Abductores (Polea Baja)": {
+            "imagen": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=400",
+            "nota": "Estabilización de la pelvis. Evitar compensación con el tronco."
+        }
     },
     "Tren Superior": {
-        "Bíceps (Polea)": {"imagen": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=400", "nota": "Asistencia en agarre si es necesario."},
-        "Pectoral (Press)": {"imagen": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=400", "nota": "Simetría en el empuje."}
+        "Bíceps (Polea)": {
+            "imagen": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=400", 
+            "nota": "Asistencia en agarre si es necesario."
+        },
+        "Pectoral (Press)": {
+            "imagen": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=400", 
+            "nota": "Simetría en el empuje."
+        },
+        "Tríceps (Extensión en Polea Alta)": {
+            "imagen": "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=400",
+            "nota": "Fomentar la extensión del codo afectado. Controlar el retorno excéntrico."
+        },
+        "Espalda (Remo sentado en Polea)": {
+            "imagen": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=400",
+            "nota": "Retracción escapular bilateral para corregir la postura asimétrica del hombro."
+        },
+        "Hombro (Elevación Lateral en Polea)": {
+            "imagen": "https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=80&w=400",
+            "nota": "Evitar subluxación del hombro afectado regulando una carga muy baja."
+        }
     },
     "Core y Estabilidad": {
-        "Abdomen (Rotación)": {"imagen": "https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=400", "nota": "Estabilización de tronco en bipedestación."}
+        "Abdomen (Rotación)": {
+            "imagen": "https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=400", 
+            "nota": "Estabilización de tronco en bipedestación."
+        },
+        "Core (Press Pallof en Polea)": {
+            "imagen": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=400",
+            "nota": "Resistencia isométrica antirrotación para mejorar el control postural central."
+        },
+        "Flexión Lateral de Tronco (Polea Baja)": {
+            "imagen": "https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=400",
+            "nota": "Fortalecimiento de cuadrados lumbares y oblicuos para mejorar la marcha."
+        }
     }
 }
 
