@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 client = Groq()
 
-st.set_page_config(page_title="Eddy_Sync", layout="wide", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="Eddy_Sync", layout="wide", initial_sidebar_state="expanded")
 
 # --- 1. CONFIGURACIÓN DE RUTINAS Y EJERCICIOS ---
 RUTINAS = {
