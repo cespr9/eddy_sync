@@ -16,51 +16,51 @@ st.set_page_config(page_title="Eddy_Sync", layout="wide", initial_sidebar_state=
 RUTINAS = {
     "Tren Inferior": {
         "Cuádriceps (Prensa)": {
-            "imagen": "https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=400", 
+            "imagen": "https://images.unsplash.com/photo-1434608519344-49d77a699e1d?q=80&w=400", # Piernas/Foco inferior
             "nota": "Enfoque en pierna afectada por hemiparesia."
         },
         "Isquiotibiales (Curl)": {
-            "imagen": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=400", 
+            "imagen": "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=400", 
             "nota": "Controlar extensión máxima."
         },
         "Extensión de Cadera (Polea Baja)": {
-            "imagen": "https://images.unsplash.com/photo-1605296867304-46d5465a25f1?q=80&w=400",
+            "imagen": "https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=400", # Glúteo/Cadera
             "nota": "Activación del glúteo mayor y control de la extensión de cadera afectada."
         },
         "Abductores (Polea Baja)": {
-            "imagen": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=400",
+            "imagen": "https://images.unsplash.com/photo-1434608519344-49d77a699e1d?q=80&w=400",
             "nota": "Estabilización de la pelvis. Evitar compensación con el tronco."
         }
     },
     "Tren Superior": {
         "Bíceps (Polea)": {
-            "imagen": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=400", 
+            "imagen": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=400", # Brazos
             "nota": "Asistencia en agarre si es necesario."
         },
         "Pectoral (Press)": {
-            "imagen": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=400", 
+            "imagen": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=400", # Pectoral/Torso
             "nota": "Simetría en el empuje."
         },
         "Tríceps (Extensión en Polea Alta)": {
-            "imagen": "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=400",
+            "imagen": "https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=80&w=400",
             "nota": "Fomentar la extensión del codo afectado. Controlar el retorno excéntrico."
         },
         "Espalda (Remo sentado en Polea)": {
-            "imagen": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=400",
+            "imagen": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=400", # Espalda posterior
             "nota": "Retracción escapular bilateral para corregir la postura asimétrica del hombro."
         },
         "Hombro (Elevación Lateral en Polea)": {
-            "imagen": "https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=80&w=400",
+            "imagen": "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=400", # Deltoides/Hombro
             "nota": "Evitar subluxación del hombro afectado regulando una carga muy baja."
         }
     },
     "Core y Estabilidad": {
         "Abdomen (Rotación)": {
-            "imagen": "https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=400", 
+            "imagen": "https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=400", # Abdominales/Core
             "nota": "Estabilización de tronco en bipedestación."
         },
         "Core (Press Pallof en Polea)": {
-            "imagen": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=400",
+            "imagen": "https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=400",
             "nota": "Resistencia isométrica antirrotación para mejorar el control postural central."
         },
         "Flexión Lateral de Tronco (Polea Baja)": {
@@ -263,14 +263,36 @@ with col_izq:
     st.markdown("<h3>Parámetros del entrenamiento:</h3>", unsafe_allow_html=True)
     st.write(f"**Paciente:** {st.session_state.discapacidad}")
     st.write(f"**Grupo Muscular Activo:** {st.session_state.grupo_seleccionado}")
-    st.write(f"**Ejercicio Actual:** {ejercicio_actual}")
     
-    st.write("<br>Nivel de resistencia adaptada por Groq:", unsafe_allow_html=True)
+    # --- RESALTADO DEL EJERCICIO ACTUAL (Diseño de Ingeniería de Interfaz) ---
+    color_resaltado = "#FFFF00" if st.session_state.alto_contraste else "#a855f7"
+    color_texto_resaltado = "#000000" if st.session_state.alto_contraste else "#ffffff"
+    bg_resaltado = "#000000" if st.session_state.alto_contraste else "rgba(168, 85, 247, 0.1)"
+    border_width = "3px" if st.session_state.alto_contraste else "1px"
+
+    ejercicio_html = f"""
+    <div style="
+        background-color: {bg_resaltado}; 
+        border: {border_width} solid {color_resaltado}; 
+        border-radius: 15px; 
+        padding: 15px; 
+        margin-top: 15px; 
+        margin-bottom: 15px;
+        text-align: center;
+    ">
+        <span style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: {'#FFFF00' if st.session_state.alto_contraste else '#9ca3af'};">Ejercitando ahora:</span>
+        <h2 style="margin: 5px 0 0 0; font-size: 32px; color: {color_resaltado} !important; font-weight: 800;">
+            {ejercicio_actual}
+        </h2>
+    </div>
+    """
+    st.markdown(ejercicio_html, unsafe_allow_html=True)
+    
+    st.write("Nivel de resistencia adaptada por Groq:", unsafe_allow_html=True)
     st.slider("", min_value=0, max_value=100, value=st.session_state.resistencia, step=5, format="%d%%", label_visibility="collapsed", disabled=True)
     
     st.markdown(f"<span style='color: { '#FFFF00' if st.session_state.alto_contraste else '#fbbf24' }; font-size: 20px;'>⚡ Resistencia fijada en **{st.session_state.resistencia}%**</span>", unsafe_allow_html=True)
     st.markdown(f"<p style='font-size: 18px; font-style: italic; color: { '#FFFF00' if st.session_state.alto_contraste else '#a855f7' };'>{st.session_state.explicacion_ia}</p>", unsafe_allow_html=True)
-
 with col_der:
     st.markdown("<h3>Tendencia de adaptación:</h3>", unsafe_allow_html=True)
     
