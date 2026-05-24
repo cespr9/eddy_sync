@@ -288,7 +288,7 @@ with col_izq:
     """
     st.markdown(ejercicio_html, unsafe_allow_html=True)
     
-    st.write("Nivel de resistencia adaptada por Groq:", unsafe_allow_html=True)
+    st.write("Nivel de resistencia adaptada por IA:", unsafe_allow_html=True)
     st.slider("", min_value=0, max_value=100, value=st.session_state.resistencia, step=5, format="%d%%", label_visibility="collapsed", disabled=True)
     
     st.markdown(f"<span style='color: { '#FFFF00' if st.session_state.alto_contraste else '#fbbf24' }; font-size: 20px;'>⚡ Resistencia fijada en **{st.session_state.resistencia}%**</span>", unsafe_allow_html=True)
